@@ -3,10 +3,13 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id 'kotlin-parcelize'
+    id 'kotlin-android'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android.buildFeatures.viewBinding true
 

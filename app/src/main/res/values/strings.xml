@@ -2,6 +2,7 @@
     <string name="app_name">Lugares</string>
     <string name="tv_correo">Correo</string>
     <string name="tv_clave">Contraseña</string>
+    <string name="tv_nombre">Nombre</string>
     <string name="title_activity_principal">Principal</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -18,10 +19,9 @@
     <string name="msg_nombre">Nombre del Lugar</string>
     <string name="msg_correo">Correo (xxxx@xxxx.xxxd</string>
     <string name="msg_telefono">Telefono (9999-9999)</string>
+    <string name="msg_imagen">Imagen del Lugar</string>
     <string name="msg_web">Sitio Web</string>
     <string name="bt_agregar">Agregar</string>
-
-
 
 
 </resources>

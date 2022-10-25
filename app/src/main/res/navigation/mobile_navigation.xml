@@ -35,4 +35,5 @@
             android:id="@+id/action_addLugarFragment_to_nav_lugar"
             app:destination="@id/nav_lugar" />
     </fragment>
+
 </navigation>

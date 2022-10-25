@@ -2,7 +2,7 @@ package com.example.lugares.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.example.lugares.data.LugarDataBase
+import com.example.lugares.data.LugarDatabase
 import com.example.lugares.model.Lugar
 import com.example.lugares.repository.LugarRepository
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +14,7 @@ class LugarViewModel(application: Application) : AndroidViewModel(application) {
     private val repository: LugarRepository
 
     init{
-        val lugarDao = LugarDataBase.getDatabase(application).lugarDao()
+        val lugarDao = LugarDatabase.getDatabase(application).lugarDao()
         repository = LugarRepository(lugarDao)
         getAllData = repository.getAllData
     }
