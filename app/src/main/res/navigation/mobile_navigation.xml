@@ -3,17 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_lugar">
-
-    <fragment
-        android:id="@+id/nav_lugar"
-        android:name="com.example.lugares.ui.lugar.LugarFragment"
-        android:label="Lugares"
-        tools:layout="@layout/fragment_lugar" >
-        <action
-            android:id="@+id/action_nav_lugar_to_addLugarFragment"
-            app:destination="@id/addLugarFragment" />
-    </fragment>
+    app:startDestination="@+id/nav_home">
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -28,12 +18,17 @@
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/addLugarFragment"
-        android:name="com.example.lugares.ui.lugar.AddLugarFragment"
+        android:name="com.example.lugares.ui.home.AddLugarFragment"
         android:label="fragment_add_lugar2"
         tools:layout="@layout/fragment_add_lugar2" >
         <action
             android:id="@+id/action_addLugarFragment_to_nav_lugar"
             app:destination="@id/nav_lugar" />
     </fragment>
+    <fragment
+        android:id="@+id/updateLugarFragment"
+        android:name="com.example.lugares.UpdateLugarFragment"
+        android:label="fragment_update_lugar"
+        tools:layout="@layout/fragment_update_lugar" />
 
 </navigation>

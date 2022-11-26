@@ -1,9 +1,11 @@
 package com.example.lugares.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lugares.databinding.LugarFilaBinding
 import com.example.lugares.model.Lugar
+import com.example.lugares.ui.home.HomeFragmentDirections
 
 
 class LugarAdapter : RecyclerView.Adapter<LugarAdapter.lugarViewHolder>(){
@@ -19,6 +21,11 @@ class LugarAdapter : RecyclerView.Adapter<LugarAdapter.lugarViewHolder>(){
             itemBinding.tvTelefono.text = lugar.telefono
             itemBinding.tvCorreo.text = lugar.correo
             itemBinding.tvNombre.text = lugar.nombre
+            //Evento enviar update
+            itemBinding.vistaFila.setOnClickListener{
+                val accion = HomeFragmentDirections.actionNavLugarToUpdateLugarFragment(lugar)
+                itemView.findNavController().navigate(accion)
+            }
         }
     }
     //Para crear una "vista" de cada fila de lugares que hereda de ViewHolder

@@ -1,4 +1,4 @@
-package com.example.lugares.ui.lugar
+package com.example.lugares.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,9 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.lugares.R
 import com.example.lugares.databinding.FragmentAddLugar2Binding
-import com.example.lugares.databinding.FragmentLugarBinding
 import com.example.lugares.model.Lugar
-import com.example.lugares.viewmodel.LugarViewModel
+import com.example.lugares.viewmodel.HomeViewModel
 
 
 class AddLugarFragment : Fragment() {
@@ -20,7 +19,7 @@ class AddLugarFragment : Fragment() {
     private var _binding: FragmentAddLugar2Binding? = null
     private val binding get() = _binding!!
 
-    private lateinit var lugarViewModel: LugarViewModel
+    private lateinit var lugarViewModel: HomeViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,7 +27,7 @@ class AddLugarFragment : Fragment() {
     ): View {
         _binding = FragmentAddLugar2Binding.inflate(inflater, container, false)
 
-        lugarViewModel = ViewModelProvider(this).get(LugarViewModel::class.java)
+        lugarViewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
         binding.btAgregar.setOnClickListener {
             addLugar()
@@ -42,8 +41,7 @@ class AddLugarFragment : Fragment() {
         val telefono=binding.etTelefono.text.toString()
         val web=binding.etWeb.text.toString()
         if (nombre.isNotEmpty()) { //Si puedo crear un lugar
-            val lugar= Lugar(0,nombre,correo,telefono,web,0.0,0.0,
-                0.0,"","",)
+            val lugar= Lugar("",nombre,correo,telefono,web)
             lugarViewModel.addLugar(lugar)
             Toast.makeText(requireContext(),"Lugar Agregado",Toast.LENGTH_SHORT).show()
             //Para devolvernos al fragment addLugar

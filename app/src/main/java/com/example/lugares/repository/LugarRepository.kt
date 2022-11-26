@@ -2,22 +2,20 @@ package com.example.lugares.repository
 
 import com.example.lugares.data.LugarDao
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import com.example.lugares.model.Lugar
 
 
 class LugarRepository(private val lugarDao: LugarDao) {
-    val getAllData: LiveData<List<Lugar>> = lugarDao.getAllData()
 
-    suspend fun addLugar(lugar: Lugar){
+    fun addLugar(lugar: Lugar){
         lugarDao.addLugar(lugar)
     }
 
-    suspend fun updateLugar(lugar: Lugar){
-        lugarDao.updateLugar(lugar)
-    }
-
-    suspend fun deleteLugar(lugar: Lugar){
+    fun deleteLugar(lugar: Lugar){
         lugarDao.deleteLugar(lugar)
     }
+
+    val getAllData: MutableLiveData<List<Lugar>> = lugarDao.getAllData()
 
 }

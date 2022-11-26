@@ -23,5 +23,9 @@
     <string name="msg_web">Sitio Web</string>
     <string name="bt_agregar">Agregar</string>
 
+    <string name="bt_actualizar">Actualizar</string>
+
+    <string name="ms_UpdateLugar">Lugar Actualizado</string>
+
 
 </resources>
