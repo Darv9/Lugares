@@ -8,7 +8,7 @@ import com.example.lugares.model.Lugar
 import com.example.lugares.ui.home.HomeFragmentDirections
 
 
-class LugarAdapter : RecyclerView.Adapter<LugarAdapter.lugarViewHolder>(){
+class LugarAdapter : RecyclerView.Adapter<LugarAdapter.LugarViewHolder>(){
     //Se crea una lista para almacenar la informacion de los lugares
     private var listaLugares = emptyList<Lugar>()
     /*¿Cómo funciona binding?
@@ -23,7 +23,7 @@ class LugarAdapter : RecyclerView.Adapter<LugarAdapter.lugarViewHolder>(){
             itemBinding.tvNombre.text = lugar.nombre
             //Evento enviar update
             itemBinding.vistaFila.setOnClickListener{
-                val accion = HomeFragmentDirections.actionNavLugarToUpdateLugarFragment(lugar)
+                val accion = HomeFragmentDirections.actionHomeFragmentToUpdateLugarFragment(lugar)
                 itemView.findNavController().navigate(accion)
             }
         }

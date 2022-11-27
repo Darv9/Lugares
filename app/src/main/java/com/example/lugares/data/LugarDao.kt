@@ -27,7 +27,6 @@ class LugarDao {
             .collection("lugaresViernes")
             .document(codigoUsuario)
             .collection("misLugares")
-            .document()
             .addSnapshotListener{ snapshot, e ->
                 if(e!=null){
                     return@addSnapshotListener
