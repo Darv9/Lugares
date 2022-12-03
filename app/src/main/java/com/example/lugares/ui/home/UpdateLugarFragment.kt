@@ -48,7 +48,7 @@ class UpdateLugarFragment : Fragment() {
         val telefono=binding.etTelefono3.text.toString()
         val web=binding.etWeb3.text.toString()
         if(nombre.isNotEmpty()){
-            val lugar = Lugar(args.lugarArg.id,nombre,telefono,web)
+            val lugar = Lugar(args.lugarArg.id,nombre,correo,telefono, web,args.lugarArg.rutaAudio, args.lugarArg.rutaImagen)
             homeViewModel.addLugar(lugar)
             Toast.makeText(requireContext(),getString((R.string.ms_UpdateLugar)), Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.action_updateLugarFragment_to_homeFragment)
