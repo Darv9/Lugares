@@ -1,5 +1,6 @@
 package com.example.lugares.ui.home
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -36,7 +37,7 @@ class UpdateLugarFragment : Fragment() {
         binding.etWeb3.setText(args.lugarArg.web)
 
         binding.btActualizar.setOnClickListener{updateLugar()}
-        //binding.btDeleteLugar.setOnClickListener{deleteLugar()}
+        binding.btDelete.setOnClickListener{deleteLugar()}
 
 
         return binding.root
@@ -55,5 +56,20 @@ class UpdateLugarFragment : Fragment() {
         }else{
             Toast.makeText(requireContext(),getString(R.string.ms_faltaValores), Toast.LENGTH_LONG).show()
         }
+    }
+
+    private fun deleteLugar(){
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton(getString(R.string.si)){_,_ ->
+            homeViewModel.deleteLugar(args.lugarArg)
+            Toast.makeText(requireContext(),
+            getString(R.string.deleted) + "${args.lugarArg.nombre}!",
+                Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_updateLugarFragment_to_homeFragment)
+        }
+        builder.setNegativeButton(getString(R.string.no)){_,_->}
+        builder.setTitle(R.string.deleted)
+        builder.setMessage(getString(R.string.seguroDeBorrar) + "${args.lugarArg.nombre}?")
+        builder.create().show()
     }
 }

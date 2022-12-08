@@ -33,5 +33,9 @@
     <string name="msgInicioNotaAudio">Grabando Audio</string>
     <string name="msgDetieneNotaAudio">Detiene Audio</string>
     <string name="msgSubiendo">Subiendo los archivos</string>
+    <string name="si">Si</string>
+    <string name="deleted">Borrar</string>
+    <string name="seguroDeBorrar">Estás seguro que quieres borrar?</string>
+    <string name="no">No</string>
 
 </resources>
